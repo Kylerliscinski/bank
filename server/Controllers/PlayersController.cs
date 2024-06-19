@@ -27,4 +27,18 @@ public class PlayersController : ControllerBase
       return BadRequest(exception.Message);
     }
   }
+
+  [HttpGet]
+  public ActionResult<List<Player>> GetPlayers()
+  {
+    try
+    {
+      List<Player> players = _playersService.GetPlayers();
+      return Ok(players);
+    }
+    catch (Exception exception)
+    {
+      return BadRequest(exception.Message);
+    }
+  }
 }

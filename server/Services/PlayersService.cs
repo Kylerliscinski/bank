@@ -1,4 +1,5 @@
 
+
 namespace bank.Services;
 
 public class PlayersService
@@ -14,5 +15,11 @@ public class PlayersService
   {
     Player player = _repo.CreatePlayer(playerData);
     return player;
+  }
+
+  internal Player GetPlayers()
+  {
+    List<Player> players = _repo.GetPlayers();
+    return players;
   }
 }
